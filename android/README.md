@@ -1,4 +1,4 @@
-# Khonodds for Android
+# Stakeglass for Android
 
 A small Trusted Web Activity (TWA) package for https://market-watch-khonsu.vercel.app/. The web app is rendered by a supported installed browser, not a bundled WebView. Web changes arrive without reinstalling the APK.
 

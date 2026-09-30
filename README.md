@@ -1,4 +1,4 @@
-# Khonodds
+# Stakeglass
 
 [Open app ↗](https://odds.khns.dev/)
 
@@ -46,7 +46,7 @@ Original project code is available under the [MIT License](LICENSE), copyright �
 
 ## Android preview
 
-[Download the signed APK](https://github.com/khons-hu/khonodds/releases/tag/android-v1.0.0-preview.1) · [Build instructions](android/README.md) · [Verification](android/VERIFICATION.md)
+[Download the signed APK](https://github.com/khons-hu/stakeglass/releases/tag/android-v1.0.0-preview.1) · [Build instructions](android/README.md) · [Verification](android/VERIFICATION.md)
 
 Android 8.0+ with a current TWA-capable browser (Chrome recommended). This small package opens the live web app. First load and server data require internet. Build, lint and signature checks pass, but installation and flows on an Android device have not yet been verified. No Google Play release or additional background notification service.
 

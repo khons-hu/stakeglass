@@ -1088,14 +1088,14 @@ export const messages = {
     "es": "Este navegador no admite notificaciones de escritorio. Los avisos en la app siguen disponibles.",
     "cs": "Tento prohlížeč nepodporuje oznámení na ploše. Upozornění v aplikaci jsou dostupná."
   },
-  "This is not a Khonodds export": {
-    "en": "This is not a Khonodds export",
-    "sk": "Toto nie je export Khonodds",
-    "hu": "Ez nem Khonodds-export",
-    "pl": "To nie jest eksport Khonodds",
-    "de": "Dies ist kein Khonodds-Export",
-    "es": "No es una exportación de Khonodds",
-    "cs": "Toto není export Khonodds"
+  "This is not a Stakeglass export": {
+    "en": "This is not a Stakeglass export",
+    "sk": "Toto nie je export Stakeglass",
+    "hu": "Ez nem Stakeglass-export",
+    "pl": "To nie jest eksport Stakeglass",
+    "de": "Dies ist kein Stakeglass-Export",
+    "es": "No es una exportación de Stakeglass",
+    "cs": "Toto není export Stakeglass"
   },
   "This month": {
     "en": "This month",
@@ -1412,14 +1412,14 @@ export const messages = {
     "es": "＋ Seguir",
     "cs": "＋ Sledovat"
   },
-  "Khonodds · research desk": {
-    "en": "Khonodds · research desk",
-    "sk": "Khonodds · výskumný prehľad",
-    "hu": "Khonodds · kutatási felület",
-    "pl": "Khonodds · panel badawczy",
-    "de": "Khonodds · Rechercheübersicht",
-    "es": "Khonodds · panel de investigación",
-    "cs": "Khonodds · výzkumný přehled"
+  "Stakeglass · research desk": {
+    "en": "Stakeglass · research desk",
+    "sk": "Stakeglass · výskumný prehľad",
+    "hu": "Stakeglass · kutatási felület",
+    "pl": "Stakeglass · panel badawczy",
+    "de": "Stakeglass · Rechercheübersicht",
+    "es": "Stakeglass · panel de investigación",
+    "cs": "Stakeglass · výzkumný přehled"
   },
   "BY KHONSU": {
     "en": "BY KHONSU",
