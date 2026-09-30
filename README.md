@@ -1,6 +1,6 @@
 # Khonodds
 
-[Open app ↗](https://market-watch-khonsu.vercel.app/)
+[Open app ↗](https://odds.khns.dev/)
 
 Independent, read-only Polymarket research desk. Vanilla JavaScript, zero runtime packages, Node 20+. No wallet connection, transactions, account, paid API or model calls.
 
