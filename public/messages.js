@@ -1016,6 +1016,24 @@ export const messages = {
     "es": "Deportes",
     "cs": "Sport"
   },
+  "Switch to dark mode": {
+    "en": "Switch to dark mode",
+    "sk": "Prepnúť na tmavý režim",
+    "hu": "Sötét mód bekapcsolása",
+    "pl": "Włącz ciemny tryb",
+    "de": "Zum dunklen Modus wechseln",
+    "es": "Cambiar al modo oscuro",
+    "cs": "Přepnout na tmavý režim"
+  },
+  "Switch to light mode": {
+    "en": "Switch to light mode",
+    "sk": "Prepnúť na svetlý režim",
+    "hu": "Világos mód bekapcsolása",
+    "pl": "Włącz jasny tryb",
+    "de": "Zum hellen Modus wechseln",
+    "es": "Cambiar al modo claro",
+    "cs": "Přepnout na světlý režim"
+  },
   "Switch color theme": {
     "en": "Switch color theme",
     "sk": "Zmeniť farebný motív",

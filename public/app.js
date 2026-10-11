@@ -7,8 +7,24 @@ let noticeRenderer=null;
 let state=normalize({version:1}),tab='discover',board=[],request=0,events=[],lastSeen={},polling=false,detailRequest=0;
 try{const saved=localStorage.getItem(key);if(saved)state=normalize(JSON.parse(saved))}catch{notice(()=>t('Saved data could not be loaded. Import a backup if you have one.'))}
 function notice(value){noticeRenderer=typeof value==='function'?value:()=>refreshText(value);$('#notice').textContent=noticeRenderer()}function save(){try{localStorage.setItem(key,JSON.stringify(state));$('#watchCount').textContent=number(state.wallets.length)}catch{notice(()=>t('Browser storage is unavailable or full. Export your research before closing.'))}}
-function theme(){document.documentElement.classList.toggle('dark',state.theme==='dark')}theme();save();
-$('#theme').onclick=()=>{state.theme=state.theme==='dark'?'light':'dark';theme();save()};
+function themeLabel(){
+ const dark=window.AppTheme.theme==='dark',button=$('#theme');
+ const label=t(dark?'Switch to light mode':'Switch to dark mode');
+ button.textContent=dark?'☀':'☾';button.setAttribute('aria-label',label);button.title=label;
+}
+function theme(){window.AppTheme.setPreference(state.theme)}
+document.addEventListener('themechange',()=>{state.theme=window.AppTheme.preference;themeLabel()});
+theme();$('#watchCount').textContent=number(state.wallets.length);
+$('#theme').onclick=()=>{
+ state.theme=window.AppTheme.theme==='dark'?'light':'dark';theme();
+ try{
+  const raw=localStorage.getItem(key);let latest;
+  try{latest=raw===null?normalize({version:1}):JSON.parse(raw);normalize(latest)}
+  catch{notice(()=>t('Saved data could not be loaded. Import a backup if you have one.'));return}
+  // A theme choice must not overwrite research saved by another tab.
+  localStorage.setItem(key,JSON.stringify({...latest,theme:state.theme}));
+ }catch{notice(()=>t('Browser storage is unavailable or full. Export your research before closing.'))}
+};
 async function api(kind,params={}){const r=await fetch('/api/data?'+new URLSearchParams({kind,...params}),{signal:AbortSignal.timeout(15000)});let d;try{d=await r.json()}catch{throw Error(t('The data service is unavailable. Retry shortly.'))}if(!r.ok)throw Error(d.error||t('Data request failed'));return d}
 const fail=err=>e(err.name==='TimeoutError'?t('Request timed out. Please retry.'):errorText(err));
 const opts=(items,selected)=>items.map(([v,l])=>`<option value="${v}" ${v===selected?'selected':''}>${t(l)}</option>`).join('');
@@ -33,6 +49,7 @@ async function poll(){if(polling||!state.alerts.enabled||document.hidden)return;
 render();poll();setInterval(poll,120000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)poll()});
 
 document.addEventListener('languagechange',()=>{
+ themeLabel();
  const fields=[...document.querySelectorAll('#content input,#content select,#content textarea')].filter(el=>el.type!=='file').map(el=>({id:el.id,name:el.name,note:el.dataset.note,value:el.value,checked:el.checked}));
  const message=$('#notice').textContent;
  switchingLanguage=true;render();switchingLanguage=false;
